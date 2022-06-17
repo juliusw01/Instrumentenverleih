@@ -1,7 +1,7 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
-function Instrument(props: any){
+function Instrument(props:any){
 
 const {
     image,
@@ -25,15 +25,6 @@ const {
                             }}
                             image={image}
                         />
-                    </Grid>
-                    <Grid item xs={3}>
-                            <p>{name}</p>
-                            <Button>
-                                Instrrumenten Knopf
-                            </Button>
-                            <Button>
-                                <ThumbUpIcon/>
-                            </Button>
                     </Grid>
                 </Grid>
             </Card>
