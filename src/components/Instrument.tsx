@@ -5,14 +5,15 @@ function Instrument(props:any){
 
 const {
     image,
-    name
+    name,
+    beschreibung
 } = props
 
     return(
         <Container>
             <Card
                 sx={{
-                    bgcolor: "orange"
+                    bgcolor: "black"
                 }}
             >
                 <Grid container xs={12}>
@@ -26,6 +27,7 @@ const {
                             image={image}
                         />
                     </Grid>
+                    
                 </Grid>
             </Card>
         </Container>

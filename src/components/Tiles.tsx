@@ -7,9 +7,10 @@ function Tiles (props:any){
     } = props
 
     return(
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
             <Grid item xs = {4}>
                 <img src= {image} alt= "../DefaultPicture/default.jpg" />
+                
             </Grid>
         </Grid>
     )
