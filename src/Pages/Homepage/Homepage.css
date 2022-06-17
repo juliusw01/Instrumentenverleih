@@ -40,3 +40,17 @@
   button {
     font-size: calc(10px + 2vmin);
   }
+
+  .instrument {
+    /*
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+    */
+    color: #333;
+    margin-top: 50px;
+  }

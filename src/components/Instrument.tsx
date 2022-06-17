@@ -1,5 +1,7 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import './instrumente.css'
+import ResponsiveDatePickers from "./ResponsiveDatePicker";
 
 function Instrument(props:any){
 
@@ -13,7 +15,7 @@ const {
         <Container>
             <Card
                 sx={{
-                    bgcolor: "black"
+                    bgcolor: "#333"
                 }}
             >
                 <Grid container xs={12}>
@@ -26,6 +28,19 @@ const {
                             }}
                             image={image}
                         />
+                    </Grid>
+                    <Grid xs={6}>
+                        <Grid className="name">
+                            {name}
+                        </Grid>
+                        <Grid className="beschreibung">
+                            {beschreibung}
+                        </Grid>
+                        <Grid className="addToCart">
+                            <Button>
+                                <AddShoppingCartIcon/>
+                            </Button>
+                        </Grid>
                     </Grid>
                     
                 </Grid>
