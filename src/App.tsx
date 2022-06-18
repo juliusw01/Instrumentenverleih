@@ -10,6 +10,8 @@ import Cart from './Pages/Cart/Cart'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Impressum from './Pages/Impressum/Impressum'
+import Login from './Pages/Account/Login/Login'
+import Register from './Pages/Account/Register/Register'
 
 function App() {
 
@@ -19,7 +21,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/account" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/impressum" element={<Impressum />} />
       </Routes>

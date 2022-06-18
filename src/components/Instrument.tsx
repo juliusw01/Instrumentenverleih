@@ -8,7 +8,9 @@ function Instrument(props:any){
 const {
     image,
     name,
-    beschreibung
+    beschreibung,
+    preis,
+    verfügbarkeit
 } = props
 
     return(
@@ -35,6 +37,9 @@ const {
                         </Grid>
                         <Grid className="beschreibung">
                             {beschreibung}
+                        </Grid>
+                        <Grid className="price">
+                            {preis}
                         </Grid>
                         <Grid className="addToCart">
                             <Button>

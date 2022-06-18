@@ -10,7 +10,7 @@ export default function Navbar(){
             </Link>
             <div>
                 <p>
-                    <Link to="/account">
+                    <Link to="/login">
                         Anmelden
                     </Link>
                 </p>
