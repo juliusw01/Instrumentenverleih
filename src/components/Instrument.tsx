@@ -1,18 +1,23 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import './instrumente.css'
+import ResponsiveDatePickers from "./ResponsiveDatePicker";
 
-function Instrument(props: any){
+function Instrument(props:any){
 
 const {
     image,
-    name
+    name,
+    beschreibung,
+    preis,
+    verfügbarkeit
 } = props
 
     return(
         <Container>
             <Card
                 sx={{
-                    bgcolor: "orange"
+                    bgcolor: "#333"
                 }}
             >
                 <Grid container xs={12}>
@@ -26,15 +31,23 @@ const {
                             image={image}
                         />
                     </Grid>
-                    <Grid item xs={3}>
-                            <p>{name}</p>
+                    <Grid xs={6}>
+                        <Grid className="name">
+                            {name}
+                        </Grid>
+                        <Grid className="beschreibung">
+                            {beschreibung}
+                        </Grid>
+                        <Grid className="price">
+                            {preis}
+                        </Grid>
+                        <Grid className="addToCart">
                             <Button>
-                                Instrrumenten Knopf
+                                <AddShoppingCartIcon/>
                             </Button>
-                            <Button>
-                                <ThumbUpIcon/>
-                            </Button>
+                        </Grid>
                     </Grid>
+                    
                 </Grid>
             </Card>
         </Container>

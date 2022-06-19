@@ -1,0 +1,21 @@
+.Login{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.registerLink{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.text{
+    text-align: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button{
+    margin-top: 20px;
+}
