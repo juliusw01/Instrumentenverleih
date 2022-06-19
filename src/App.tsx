@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Impressum from './Pages/Impressum/Impressum'
 import Login from './Pages/Account/Login/Login'
 import Register from './Pages/Account/Register/Register'
+import PageNotFound from './Pages/PageNotFound/PageNotFound'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/impressum" element={<Impressum />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Fooder />
     </div>
