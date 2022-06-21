@@ -2,46 +2,33 @@
 import { Grid } from '@mui/material'
 import { Container } from '@mui/system'
 import './App.css'
-import Header from './components/Header'
-import Instrument from './components/Instrument'
+import Fooder from './components/Footer'
+import HomePage from './Pages/Homepage/Homepage'
+import About from './Pages/Account/Account'
+import Cart from './Pages/Cart/Cart'
+
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Impressum from './Pages/Impressum/Impressum'
+import Login from './Pages/Account/Login/Login'
+import Register from './Pages/Account/Register/Register'
 
 function App() {
 
   return (
-    <Container
-      sx={{
-        padding: "10px"
-      }}
-      >
-
-      <Grid container xs={12}>
-        <Grid item xs={3}>
-          <Instrument
-            image = "https://thumbs.static-thomann.de/thumb/thumb220x220/pics/prod/139262.webp"
-            name = "Saxofon"
-          />
-        </Grid>
-        <Grid item xs={3}>
-          <Instrument
-            image = "https://thumbs.static-thomann.de/thumb/thumb220x220/pics/prod/297433.webp"
-            name = "Klavier"
-          />
-        </Grid>
-        <Grid item xs={3}>
-          <Instrument
-            image = "https://thumbs.static-thomann.de/thumb//thumb250x250/pics/prod/130179.webp"
-            name = "Gitarre"
-          />
-        </Grid>
-        <Grid item xs={3}>
-          <Instrument
-            image = "https://thumbs.static-thomann.de/thumb/thumb220x220/pics/prod/511808.webp"
-            name = "Schlagzeug"
-          />
-        </Grid>
-      </Grid>
-
-    </Container>
+    <>
+    <div className="container">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/impressum" element={<Impressum />} />
+      </Routes>
+      <Fooder />
+    </div>
+  </>
   )
 }
 
