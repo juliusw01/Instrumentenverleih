@@ -12,10 +12,12 @@ import Navbar from './components/Navbar'
 import Impressum from './Pages/Impressum/Impressum'
 import Login from './Pages/Account/Login/Login'
 import Register from './Pages/Account/Register/Register'
+import { Parallax, ParallaxProvider, useParallax } from 'react-scroll-parallax'
 
 function App() {
 
   return (
+    <ParallaxProvider>
     <>
     <div className="container">
       <Navbar />
@@ -29,6 +31,7 @@ function App() {
       <Fooder />
     </div>
   </>
+  </ParallaxProvider>
   )
 }
 

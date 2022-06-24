@@ -36,6 +36,10 @@
       transform: rotate(360deg);
     }
   }
+  body{
+    background-image: url('https://i.pinimg.com/736x/32/eb/ed/32ebed48694ddefaba13f1c61cf668d0.jpg');
+    background-size: 100%;
+  }
   
   button {
     font-size: calc(10px + 2vmin);
