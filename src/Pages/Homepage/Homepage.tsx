@@ -3,15 +3,18 @@ import { Grid } from "@mui/material"
 import { useState } from "react"
 import Instrument from "../../components/Instrument"
 import './Homepage.css'
+import { Parallax } from "react-scroll-parallax"
 
 export default function HomePage(){
     const [count, setCount] = useState(0)
 
     return(
+        <Parallax speed={-30}>
+        <div>
         <Container 
             sx={{
-                padding: "50px"
-          }}
+                padding: "0px"
+        }}
         >
             <Grid spacing={4} className="instruments">
                 <Grid xs = {4} className="instrument">
@@ -32,5 +35,7 @@ export default function HomePage(){
             </Grid>
 
         </Container>
+        </div>
+        </Parallax>
     )
 }
