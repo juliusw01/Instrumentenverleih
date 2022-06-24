@@ -2,6 +2,7 @@ import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './instrumente.css'
 import ResponsiveDatePickers from "./ResponsiveDatePicker";
+import { Link } from "react-router-dom";
 
 function Instrument(props:any){
 
@@ -42,9 +43,11 @@ const {
                             {preis}
                         </Grid>
                         <Grid className="addToCart">
-                            <Button>
-                                <AddShoppingCartIcon/>
-                            </Button>
+                            <Link to={name}>
+                                <Button>
+                                    <AddShoppingCartIcon/>
+                                </Button>
+                            </Link>
                         </Grid>
                     </Grid>
                     
