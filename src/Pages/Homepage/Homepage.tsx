@@ -3,15 +3,18 @@ import { Grid } from "@mui/material"
 import { useState } from "react"
 import Instrument from "../../components/Instrument"
 import './Homepage.css'
+import { Parallax } from "react-scroll-parallax"
 
 export default function HomePage(){
     const [count, setCount] = useState(0)
 
     return(
+        <Parallax speed={-30}>
+        <div>
         <Container 
             sx={{
-                padding: "50px"
-          }}
+                padding: "0px"
+        }}
         >
             <Grid spacing={4} className="instruments">
                 <Grid xs = {4} className="instrument">
@@ -27,10 +30,12 @@ export default function HomePage(){
                     <Instrument image="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/483770/15593265_800.jpg" name="Schlagzeug" beschreibung="Es handelt sich um ein Tolles Schlagzeug!" preis="20€ am Tag oder 175€ pro Woche"></Instrument>
                 </Grid>
                 <Grid xs = {4} className="instrument">
-                    <Instrument image="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/137907/6746845_800.jpg" name="Jagdhorn" beschreibung="Es handelt sich um eine Tolle Geige!" preis="15€ am Tag oder 90€ pro Woche"></Instrument>
+                    <Instrument image="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/137907/6746845_800.jpg" name="Geige" beschreibung="Es handelt sich um eine Tolle Geige!" preis="15€ am Tag oder 90€ pro Woche"></Instrument>
                 </Grid>
             </Grid>
 
         </Container>
+        </div>
+        </Parallax>
     )
 }
