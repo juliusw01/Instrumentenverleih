@@ -13,7 +13,7 @@ export default function HomePage(){
         <div>
         <Container 
             sx={{
-                padding: "200px"
+                padding: "0px"
         }}
         >
             <Grid spacing={4} className="instruments">
