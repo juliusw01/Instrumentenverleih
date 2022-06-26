@@ -14,8 +14,6 @@ import Login from './Pages/Account/Login/Login'
 import Register from './Pages/Account/Register/Register'
 import PageNotFound from './Pages/PageNotFound/PageNotFound'
 import Detailseite from './Pages/Detailseite/Detailseite'
-import Saxophon from './Pages/Detailseite/Saxophon/Saxophon'
-import Schlagzeug from './Pages/Detailseite/Schlagzeug/Schlagzeug'
 import {ParallaxProvider} from 'react-scroll-parallax'
 
 function App() {
@@ -30,10 +28,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/impressum" element={<Impressum />} />
         <Route path='*' element={<PageNotFound />} />
-        <Route path='/Saxophon' element={<Saxophon />} />
-        <Route path='/Schlagzeug' element={<Schlagzeug />} />
+        <Route path='/:instrumentID' element={<Detailseite />} />
+        <Route path="/impressum" element={<Impressum />} />
       </Routes>
       <Footer />
     </div>
