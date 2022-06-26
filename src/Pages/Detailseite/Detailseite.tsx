@@ -1,7 +1,7 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './Detailseite.css'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Parallax } from "react-scroll-parallax";
 import { useQuery } from "react-query";
 import Instrument from "../../components/Instrument";
@@ -24,16 +24,16 @@ export default function Detailseite(props:any){
     const instrumentname = window.location.pathname;
     const pathname = 'http://127.0.0.1:8080/instrumente/Saxophon' + {instrumentname}; 
 
+    let { instrumentID } = useParams();
+    const apiURL = `http://127.0.0.1:8080/instrumente/${instrumentID}`;
+
     const {isLoading, error, data }: any = useQuery<IInstrument, Error, IInstrument, string>(
         "instrument", 
-                async () => {const res = await fetch('http://127.0.0.1:8080/instrumente/Saxophon');
+                async () => {const res = await fetch(apiURL);
                     return res.json();
                 }
             );
 
-            LicenseInfo.setLicenseKey(
-                'x0jTPl0USVkVZV0SsMjM1kDNyADM5cjM2ETPZJVSQhVRsIDN0YTM6IVREJ1T0b9586ef25c9853decfa7709eee27a1e',
-              );
 
     if(error){return <h1> Da ist etwas schiefgelaufen :(</h1>}
     if(isLoading){return <h1>Loading...</h1>}

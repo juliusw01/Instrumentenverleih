@@ -14,7 +14,7 @@ import Login from './Pages/Account/Login/Login'
 import Register from './Pages/Account/Register/Register'
 import PageNotFound from './Pages/PageNotFound/PageNotFound'
 import Detailseite from './Pages/Detailseite/Detailseite'
-import {ParallaxProvider} from 'react-scroll-parallax'
+import {Parallax, ParallaxProvider} from 'react-scroll-parallax'
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
     <ParallaxProvider>
     <>
     <div className="container">
+    <Parallax speed={-30}>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -33,6 +34,7 @@ function App() {
         <Route path="/impressum" element={<Impressum />} />
       </Routes>
       <Footer />
+      </Parallax>
     </div>
   </>
   </ParallaxProvider>
