@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import './Login.css'
+import { Box } from "@mui/material";
 
 export default function Login(){
     const [email, setEmail] = useState("");
@@ -19,9 +20,15 @@ export default function Login(){
     return (
       <div className="Login">
         <Form onSubmit={handleSubmit}>
+        <Box className="box"
+          sx={{
+            width: 300,
+            height: 130,
+          }}
+          >
           <Form.Group controlId="email">
             <Form.Label className="text">Email</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               autoFocus
               type="email"
               value={email}
@@ -30,12 +37,13 @@ export default function Login(){
           </Form.Group>
           <Form.Group controlId="password">
             <Form.Label className="text">Passwort</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
+          </Box>
           <Button size="lg" type="submit" disabled={!validateForm()} className="button">
             Anmelden
           </Button>
