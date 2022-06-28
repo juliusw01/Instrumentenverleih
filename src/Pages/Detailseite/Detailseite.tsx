@@ -12,6 +12,7 @@ import ResponsiveDatePickers from "../../components/ResponsiveDatePicker";
 import DatePicker from "../../components/DatePicker";
 
 
+
 export default function Detailseite(props:any){
 
     const {
@@ -20,9 +21,6 @@ export default function Detailseite(props:any){
         beschreibung,
         preis
     }=props
-
-    const instrumentname = window.location.pathname;
-    const pathname = 'http://127.0.0.1:8080/instrumente/Saxophon' + {instrumentname}; 
 
     let { instrumentID } = useParams();
     const apiURL = `http://127.0.0.1:8080/instrumente/${instrumentID}`;
@@ -39,7 +37,6 @@ export default function Detailseite(props:any){
     if(isLoading){return <h1>Loading...</h1>}
 
     console.log({data});
-    console.log({pathname});
 
     return(
         //<Parallax speed={-30}>
@@ -68,13 +65,18 @@ export default function Detailseite(props:any){
                         {data?.beschreibung}
                     </Grid>
                     <Grid className="price">
-                        {data?.preis}
+                        {data?.preis} €
                     </Grid>
                     <Grid className="ausleihe">
                         <DatePicker beschreibung='Ausleihdatum'/>
                     </Grid>
                     <Grid className="rückgabe">
                         <DatePicker beschreibung='Rückgabedatum'/>
+                    </Grid>
+                    <Grid className="addToCart">
+                        <Button>
+                            <AddShoppingCartIcon />
+                        </Button>
                     </Grid>
                 </Grid>
                 

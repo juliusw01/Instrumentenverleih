@@ -1,5 +1,4 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import './instrumente.css'
 import ResponsiveDatePickers from "./ResponsiveDatePicker";
