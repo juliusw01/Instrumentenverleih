@@ -1,28 +1,34 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import './instrumente.css'
 import ResponsiveDatePickers from "./ResponsiveDatePicker";
 import { Link } from "react-router-dom";
+import { pink } from '@mui/material/colors';
 
 function Instrument(props:any){
+    
 
 const {
     image,
     name,
     beschreibung,
     preis,
-    verfügbarkeit
+    verfügbarkeit,
+    id
 } = props
 
+const instrumentPath = '/instrument/' + {name};
+
     return(
+        
         <Container>
             <Card
                 sx={{
                     bgcolor: "#333"
                 }}
             >
-                <Grid container xs={12}>
-                    <Grid item xs={6}>
+                <Grid container xs={12} sm={12} md={12} lg={12}>
+                    <Grid item xs={6} sm={6} md={6} lg={6}>
                         <CardMedia
                             component="img"
                             sx={{
@@ -32,7 +38,7 @@ const {
                             image={image}
                         />
                     </Grid>
-                    <Grid xs={6}>
+                    <Grid xs={6} sm={6} md={6} lg={6}>
                         <Grid className="name">
                             {name}
                         </Grid>
@@ -45,7 +51,7 @@ const {
                         <Grid className="addToCart">
                             <Link to={name}>
                                 <Button>
-                                    <AddShoppingCartIcon/>
+                                    <ArrowForwardIcon sx={{color : pink}}/>
                                 </Button>
                             </Link>
                         </Grid>
