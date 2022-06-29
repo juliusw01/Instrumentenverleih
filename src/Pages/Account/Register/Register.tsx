@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import './Register.css'
+import { Box } from "@mui/system";
 
 export default function Register(){
     const [email, setEmail] = useState("");
@@ -22,9 +23,15 @@ export default function Register(){
     return (
       <div className="Register">
         <Form onSubmit={handleSubmit}>
+        <Box className="box"
+          sx={{
+            width: 300,
+            height: 300,
+          }}
+          >
           <Form.Group controlId="name">
             <Form.Label className="text">Name</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               autoFocus
               type="name"
               value={name}
@@ -33,7 +40,7 @@ export default function Register(){
           </Form.Group>
           <Form.Group controlId="vorname">
             <Form.Label className="text">Vorname</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               autoFocus
               type="vorname"
               value={vorname}
@@ -42,7 +49,7 @@ export default function Register(){
           </Form.Group>
           <Form.Group controlId="adresse">
             <Form.Label className="text">Adresse</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               autoFocus
               type="adresse"
               value={adresse}
@@ -51,7 +58,7 @@ export default function Register(){
           </Form.Group>
           <Form.Group controlId="email">
             <Form.Label className="text">Email</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               autoFocus
               type="email"
               value={email}
@@ -60,12 +67,13 @@ export default function Register(){
           </Form.Group>
           <Form.Group controlId="password">
             <Form.Label className="text">Passwort</Form.Label>
-            <Form.Control
+            <Form.Control className="field"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
+          </Box>
           <Button size="lg" type="submit" disabled={!validateForm()} className="button">
             Registrieren
           </Button>
