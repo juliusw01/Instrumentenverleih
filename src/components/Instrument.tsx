@@ -49,7 +49,7 @@ console.log({name, id});
                             {preis}
                         </Grid>
                         <Grid className="addToCart">
-                            <Link to={name}>
+                            <Link to={id}>
                                 <Button
                                     sx={{
                                         svg: { color: '#fff'},
