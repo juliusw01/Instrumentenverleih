@@ -19,27 +19,27 @@ import {Parallax, ParallaxProvider} from 'react-scroll-parallax'
 function App() {
 
   return (
-    <ParallaxProvider>
-    <>
-    <div className="container">
-    <Parallax speed={-30}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path='*' element={<PageNotFound />} />
-        <Route path='/:instrumentID' element={<Detailseite />} />
-        <Route path="/impressum" element={<Impressum />} />
-      </Routes>
-      <Footer />
-      </Parallax>
-    </div>
-  </>
-  </ParallaxProvider>
+      <ParallaxProvider>
+        <>
+        <div className="container">
+          <Parallax speed={-30}>
+            <Navbar />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path='*' element={<PageNotFound />} />
+                <Route path='/:instrumentID' element={<Detailseite />} />
+                <Route path="/impressum" element={<Impressum />} />
+              </Routes>
+            <Footer />
+          </Parallax>
+        </div>
+      </>
+    </ParallaxProvider>
   )
 }
 
 
-export default App
+export default App;
