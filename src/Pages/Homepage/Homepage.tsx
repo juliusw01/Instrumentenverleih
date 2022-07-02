@@ -22,7 +22,7 @@ export default function HomePage(){
     console.log({data});
 
     return(
-        //<Parallax speed={-30}>
+        <Parallax speed={-30}>
         <Container className="container">
             <Grid spacing={4} className="instruments">
                     {data?.map ((entry : any) => (
@@ -33,6 +33,6 @@ export default function HomePage(){
                 
             </Grid>
         </Container>
-        //</Parallax>
+        </Parallax>
     )
 }

@@ -13,7 +13,7 @@ export default function Footer(){
           }}
           >
             <Grid item xs={12} textAlign='center'>
-                <p><Button href="/" className="footerLink">Home</Button> | <Link to="/impressum" className="footerLink">Impressum</Link> | <Link to="/impressum" className="footerLink">Über uns</Link></p>
+                <p><Button href="/" className="footerLink">Home</Button> | <Link to="/impressum" className="footerLink">Impressum</Link> | <Link to="/ueberuns" className="footerLink">Über uns</Link></p>
             </Grid>
             </Box>
         </Grid>    
