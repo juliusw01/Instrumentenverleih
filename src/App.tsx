@@ -21,6 +21,7 @@ import Bestellbestätigung from './Pages/Bestellbestätigung/Bestellbestätigung
 function App() {
 
   return (
+
     <ParallaxProvider>
     <>
     <div className="container">
@@ -42,8 +43,9 @@ function App() {
     </div>
   </>
   </ParallaxProvider>
+
   )
 }
 
 
-export default App
+export default App;

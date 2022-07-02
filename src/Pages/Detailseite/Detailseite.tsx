@@ -10,11 +10,17 @@ import StaticDateRangePickerDemo from "../../components/DateRangePicker";
 import { LicenseInfo } from '@mui/x-data-grid-pro';
 import ResponsiveDatePickers from "../../components/ResponsiveDatePicker";
 import DatePicker from "../../components/DatePicker";
+
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+import Cookies from 'js-cookie';
+import { SetStateAction, useState } from "react";
+import React from "react";
 
 
-export default function Detailseite(props:any){
+
+
+export default function Detailseite(this: any, props:any){
 
     const {
         image,
@@ -36,10 +42,28 @@ export default function Detailseite(props:any){
     const navigate = useNavigate();
 
 
+
     if(error){return <h1> Da ist etwas schiefgelaufen :(</h1>}
     if(isLoading){return <h1>Loading...</h1>}
 
     console.log({data});
+    console.log({apiURL});
+
+    var counter : number = 0; 
+    if(!Cookies.get("counter")){
+        Cookies.set("counter", counter.toString(), { path: "/" }); 
+    } 
+
+    function handleCookie() {
+        counter = parseInt(Cookies.get("counter")!) + 1;
+        console.log(counter);
+        Cookies.set("instrumentID" + counter.toString(), data?.id, { path: "/" });  
+        Cookies.set("instrumentPreis" + counter.toString(), data?.preis, { path: "/" });
+        Cookies.set("instrumentName" + counter.toString(), data?.name, { path: "/" }); 
+        Cookies.set("counter", counter.toString(), { path: "/" }); 
+      }
+
+      const [date, setStartDate] = useState(new Date());
 
     return(
         //<Parallax speed={-30}>
@@ -77,6 +101,7 @@ export default function Detailseite(props:any){
                         <DatePicker beschreibung='Rückgabedatum' />
                     </Grid>
                     <Grid className="addToCart">
+
                         <Link to='/cart'>
                             <Button
                                 sx={{
@@ -87,6 +112,7 @@ export default function Detailseite(props:any){
                                 <AddShoppingCartIcon />
                             </Button>
                         </Link>
+
                     </Grid>
                     <Grid className="zurück">
                             <Button
@@ -108,4 +134,8 @@ export default function Detailseite(props:any){
 
 
 
+}
+
+function setStartDate(date: any) {
+    throw new Error("Function not implemented.");
 }

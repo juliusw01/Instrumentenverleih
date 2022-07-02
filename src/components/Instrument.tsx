@@ -17,7 +17,11 @@ const {
     id
 } = props
 
+
 console.log({name, id});
+
+const instrumentPath = '/instrument/' + {id};
+
 
     return(
         
@@ -50,12 +54,14 @@ console.log({name, id});
                         </Grid>
                         <Grid className="addToCart">
                             <Link to={id}>
+
                                 <Button
                                     sx={{
                                         svg: { color: '#fff'},
                                         input:  { color: '#fff'},
                                         label:  { color: '#fff'}
                                     }}>
+
                                     <ArrowForwardIcon sx={{color : pink}}/>
                                 </Button>
                             </Link>
