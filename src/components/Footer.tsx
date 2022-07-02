@@ -1,4 +1,5 @@
 import { Box, Grid } from "@mui/material";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './styles.css'
 
@@ -12,7 +13,7 @@ export default function Footer(){
           }}
           >
             <Grid item xs={12} textAlign='center'>
-                <p><Link to="/" className="footerLink">Home</Link> | <Link to="/impressum" className="footerLink">Impressum</Link> | <Link to="/impressum" className="footerLink">Über uns</Link></p>
+                <p><Button href="/" className="footerLink">Home</Button> | <Link to="/impressum" className="footerLink">Impressum</Link> | <Link to="/impressum" className="footerLink">Über uns</Link></p>
             </Grid>
             </Box>
         </Grid>    
