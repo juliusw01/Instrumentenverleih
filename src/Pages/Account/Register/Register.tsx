@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -15,6 +15,35 @@ export default function Register(){
     function validateForm() {
       return email.length > 0 && password.length > 0 && name.length > 0 && vorname.length > 0 && adresse.length > 0;
     }
+
+    const apiUrl = "localhost:8080/instrumente/add";
+
+    useEffect(() => {
+      // PUT request using fetch with error handling
+      const requestOptions = {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title: 'React Hooks PUT Request Example' })
+      };
+      fetch(apiUrl, requestOptions)
+          .then(async response => {
+              const data = await response.json();
+  
+              // check for error response
+              if (!response.ok) {
+                  // get error message from body or default to response status
+                  const error = (data && data.message) || response.status;
+                  return Promise.reject(error);
+              }
+  
+              console.log(data);
+              //setPostId(data.id);
+          })
+          .catch(error => {
+              //setErrorMessage(error);
+              console.error('There was an error!', error);
+          });
+  }, []);
   
     function handleSubmit(event : any) {
       event.preventDefault();
@@ -74,7 +103,7 @@ export default function Register(){
             />
           </Form.Group>
           </Box>
-          <Button size="lg" type="submit" disabled={!validateForm()} className="button">
+          <Button size="lg" type="submit" disabled={!validateForm()} className="button" >
             Registrieren
           </Button>
           <Link to="/login" className="loginLink">

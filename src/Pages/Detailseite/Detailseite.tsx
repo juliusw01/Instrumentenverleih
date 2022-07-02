@@ -1,7 +1,7 @@
 import { Button, Card, CardMedia, Container, Grid } from "@mui/material";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './Detailseite.css'
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Parallax } from "react-scroll-parallax";
 import { useQuery } from "react-query";
 import Instrument from "../../components/Instrument";
@@ -10,9 +10,13 @@ import StaticDateRangePickerDemo from "../../components/DateRangePicker";
 import { LicenseInfo } from '@mui/x-data-grid-pro';
 import ResponsiveDatePickers from "../../components/ResponsiveDatePicker";
 import DatePicker from "../../components/DatePicker";
+
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 import Cookies from 'js-cookie';
 import { SetStateAction, useState } from "react";
 import React from "react";
+
 
 
 
@@ -34,7 +38,10 @@ export default function Detailseite(this: any, props:any){
                     return res.json();
                 }
             );
-    
+
+    const navigate = useNavigate();
+
+
 
     if(error){return <h1> Da ist etwas schiefgelaufen :(</h1>}
     if(isLoading){return <h1>Loading...</h1>}
@@ -91,13 +98,32 @@ export default function Detailseite(this: any, props:any){
                         <DatePicker beschreibung='Ausleihdatum'/>
                     </Grid>
                     <Grid className="rückgabe">
-                        <DatePicker beschreibung='Rückgabedatum'/>
+                        <DatePicker beschreibung='Rückgabedatum' />
                     </Grid>
                     <Grid className="addToCart">
-                        <Button onClick={handleCookie}>
-                            <AddShoppingCartIcon />
-                        </Button>
+
+                        <Link to='/cart'>
+                            <Button
+                                sx={{
+                                    svg: { color: '#fff'},
+                                    input:  { color: '#fff'},
+                                    label:  { color: '#fff'}
+                                }}>
+                                <AddShoppingCartIcon />
+                            </Button>
+                        </Link>
+
                     </Grid>
+                    <Grid className="zurück">
+                            <Button
+                                sx={{
+                                    svg: { color: '#fff'},
+                                    input:  { color: '#fff'},
+                                    label:  { color: '#fff'}
+                                }} href="http://localhost:3000">
+                                <ArrowBackIcon />
+                            </Button>
+                </Grid>
                 </Grid>
                 
             </Grid>

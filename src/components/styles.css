@@ -19,11 +19,12 @@
     align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
-    margin-top: 50px;
+    margin-top: 0px;
+    margin-bottom: 300px;
   }
-  
+
   .site-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   
   .nav div {
@@ -52,8 +53,9 @@
   }
 
   .footer{
+    margin-top: 300px;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
 
   .footerLink{
@@ -67,6 +69,7 @@
   }
 
   .box{
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(0,0,0,0.5);

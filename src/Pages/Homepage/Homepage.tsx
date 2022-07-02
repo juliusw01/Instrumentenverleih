@@ -22,17 +22,19 @@ export default function HomePage(){
     console.log({data});
 
     return(
-        //<Parallax speed={-30}>
+        <Parallax speed={-30}>
         <Container className="container">
             <Grid spacing={4} className="instruments">
                     {data?.map ((entry : any) => (
                         <Grid item key = {entry.title} xs = {12} sm={12} md={12} lg={12} className="instrument">
-                            <Instrument image={entry.image} name={entry.name} beschreibung={entry.beschreibung} preis={entry.preis} id={entry.id}></Instrument>
+
+                            <Instrument image={entry.image} name={entry.name} beschreibung={entry.beschreibung} preis={entry.preis} id={entry.id} ></Instrument>
+
                         </Grid>
                     ))}
                 
             </Grid>
         </Container>
-        //</Parallax>
+        </Parallax>
     )
 }

@@ -18,7 +18,13 @@ export default function BasicDatePicker(props : any) {
         onChange={(newValue) => {
           setValue(newValue);
         }}
-        renderInput={(params) => <TextField {...params} />}
+        renderInput={(params) => 
+            <TextField {...params}
+            sx={{
+                svg: { color: '#fff'},
+                input:  { color: '#fff'},
+                label:  { color: '#fff'}
+            }} />}
       />
     </LocalizationProvider>
   );
