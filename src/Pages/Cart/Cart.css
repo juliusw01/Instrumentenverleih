@@ -1,0 +1,23 @@
+.name{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-top: 30px;
+}
+
+.summe { 
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: right;
+  }
+
+
+.price{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: right;
+  }

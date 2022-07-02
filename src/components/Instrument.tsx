@@ -17,7 +17,7 @@ const {
     id
 } = props
 
-const instrumentPath = '/instrument/' + {name};
+const instrumentPath = '/instrument/' + {id};
 
     return(
         
@@ -49,7 +49,7 @@ const instrumentPath = '/instrument/' + {name};
                             {preis}
                         </Grid>
                         <Grid className="addToCart">
-                            <Link to={name}>
+                            <Link to={id}>
                                 <Button>
                                     <ArrowForwardIcon sx={{color : pink}}/>
                                 </Button>
