@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import {Avatar, Box, Button, Container, Grid, IconButton, Link, TextField, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-import "./SignUp.css";
 import { useForm, Controller } from "react-hook-form";
 import { setCookie } from "../../CookieHandler";
 import md5 from "md5";
 
-function SignUp() {
+function Register() {
     const [userName, setUserName]: any = useState("");
     const [firstName, setFirstName]: any = useState("");
     const [lastName, setLastName]: any = useState("");
@@ -49,15 +48,12 @@ function SignUp() {
             name: lastName,
             email: email,
             password: md5(password),
-            //passwordConfirmHash: md5(confirmPassword),
             address: address,
-            //number: number,
-            //plz: parseInt(plz),
-            //city: city,
           }),
         };
         const response = await fetch(apiUrlAll, requestOptions);
         if (!response.ok) {
+            console.log('Nicht ok')
           setError({ isError: true, msg: `Fehler: ${response.statusText}` });
           setAgree(false);
         } else if (response.ok) {
@@ -118,7 +114,6 @@ function SignUp() {
                                     return;
                                 }}
                                 value={userName}
-                                //error={errors.userName}
                                 InputLabelProps={{
                                   style: {
                                     color: "white"
@@ -147,7 +142,6 @@ function SignUp() {
                                     return;
                                 }}
                                 value={firstName}
-                                //error={errors.firstName}
                                 InputLabelProps={{
                                   style: {
                                     color: "white"
@@ -175,7 +169,6 @@ function SignUp() {
                                     return;
                                 }}
                                 value={lastName}
-                                //error={errors.lastName}
                                 InputLabelProps={{
                                   style: {
                                     color: "white"
@@ -192,7 +185,6 @@ function SignUp() {
                             rules={{
                                 required: true,
                                 minLength: 2,
-                                // => RFC 2822 Email
                                 pattern:
                                 /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i, // eslint-disable-line no-useless-escape
                             }}
@@ -209,7 +201,6 @@ function SignUp() {
                                     return;
                                 }}
                                 value={email}
-                                //error={errors.email}
                                 InputLabelProps={{
                                   style: {
                                     color: "white"
@@ -243,7 +234,6 @@ function SignUp() {
                                     return;
                                 }}
                                 value={password}
-                                //error={errors.password}
                                 InputLabelProps={{
                                   style: {
                                     color: "white"
@@ -281,7 +271,6 @@ function SignUp() {
                                     setValue("confirmPassword", e.target.value);
                                     return;
                                 }}
-                                //error={errors.confirmPassword}
                                 InputLabelProps={{
                                   style: {
                                     color: "white"
@@ -308,7 +297,6 @@ function SignUp() {
                                     setValue("street", e.target.value);
                                     return;
                                     }}
-                                    //error={errors.street}
                                     InputLabelProps={{
                                       style: {
                                         color: "white"
@@ -321,7 +309,6 @@ function SignUp() {
                         </Grid>
                         <Button
                         id="signUp-button"
-                        //disabled={!agree}
                         disabled={!validateForm()}
                         type="submit"
                         fullWidth
@@ -347,4 +334,4 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+export default Register;

@@ -2,9 +2,8 @@ import React, {useState} from "react";
 
 import Grid from "@mui/material/Grid";
 import {
-    Avatar,
     Box,
-    Container, IconButton,
+    Container,
     TextField,
 } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -14,13 +13,14 @@ import {setCookie} from "../../CookieHandler";
 import {useNavigate} from "react-router-dom";
 import {useForm, Controller} from "react-hook-form";
 import md5 from "md5";
+import { Any } from "@react-spring/types";
 
 
-export default function SignIn() {
+export default function Login() {
 
     const [userName, setUserName] = useState("");
     const [userPassword, setUserPassword] = useState("");
-    const apiUlr = `http://localhost:8080/benutzer/login`;
+    const backendURL = `http://127.0.0.1:8080/benutzer/login`;
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState({isError: false, msg: "No Error"});
     const {
@@ -30,6 +30,8 @@ export default function SignIn() {
         control,
     } = useForm();
 
+    
+
     let navigate = useNavigate();
 
     const redirectToHome = () => {
@@ -37,10 +39,10 @@ export default function SignIn() {
     };
 
     const handleSubmitClick = async () => {
+        console.log('In handleSubmitClick')
         let redirectHome: boolean = false;
         setIsLoading(true);
         let passwordToSend: string;
-        //passwordToSend = passwordMd5(userPassword);
         const requestOptions = {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
@@ -49,10 +51,12 @@ export default function SignIn() {
                 passwordHash: md5(userPassword),
             }),
         };
-        const response = await fetch(apiUlr, requestOptions);
+        const response = await fetch(backendURL, requestOptions);
         if (!response.ok) {
+            console.log('response not okay')
             setError({isError: true, msg: `Fehler: ${response.statusText}`});
         } else if (response.ok) {
+            console.log('response ok')
             const data: any = await response.json();
             setError({isError: false, msg: "No error"});
             setCookie("userId", data.id, 7);
@@ -60,6 +64,7 @@ export default function SignIn() {
         }
         setIsLoading(false);
         if (redirectHome) {
+            console.log('--> redirect Home')
             redirectToHome();
         }
     };
@@ -122,7 +127,7 @@ export default function SignIn() {
                             control={control}
                             rules={{
                                 required: true,
-                                minLength: 7,
+                                minLength: 8,
                                 maxLength: 32,
                             }}
                             render={({field}) => (
@@ -140,7 +145,6 @@ export default function SignIn() {
                                         setValue("userPassword", e.target.value);
                                         return;
                                     }}
-                                    //error={errors.userPassword}
                                     InputLabelProps={{
                                       style: {
                                         color: "white"
@@ -166,7 +170,9 @@ export default function SignIn() {
                                 color: "white"
                             }}
                             className="{classes.submit}"
-                            onClick={handleSubmit(handleSubmitClick)}
+                            //onClick={console.log}
+                            //href="/"
+                            //onClick={handleSubmit(handleSubmitClick)}
                         >
                             Anmelden
                         </Button>
@@ -182,4 +188,4 @@ export default function SignIn() {
             </Container>
         </div>
     );
-}
+} 

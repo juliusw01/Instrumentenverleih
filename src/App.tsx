@@ -10,13 +10,11 @@ import Cart from './Pages/Cart/Cart'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Impressum from './Pages/Impressum/Impressum'
-import Login from './Pages/Account/Login/Login'
-import Register from './Pages/Account/Register/Register'
 import PageNotFound from './Pages/PageNotFound/PageNotFound'
 import Detailseite from './Pages/Detailseite/Detailseite'
 import {Parallax, ParallaxProvider} from 'react-scroll-parallax'
-import SignUp from './Pages/Account/SignUp'
-import SignIn from './Pages/Account/SignIn'
+import Register from './Pages/Account/Register'
+import Login from './Pages/Account/Login'
 
 function App() {
 
@@ -28,8 +26,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/register" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path='*' element={<PageNotFound />} />
         <Route path='/:instrumentID' element={<Detailseite />} />
